@@ -43,7 +43,7 @@ public class Carretera {
 	}
 	private void tick(){
 		for(Cotxe c : cotxes){
-			System.out.println(c.getPos());
+			c.setPos(c.getPos() + c.getVelocitad());
 		}
 		for(int i = 0; i < cotxes.size(); i++){
 			Cotxe d = cotxes.get(i);
