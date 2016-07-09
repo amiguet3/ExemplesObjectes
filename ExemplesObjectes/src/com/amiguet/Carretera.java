@@ -32,6 +32,7 @@ public class Carretera {
 	}
 	public void start(){
 		while (true){
+			print();
 			tick();
 			try {
 				Thread.sleep(1000);
@@ -42,12 +43,39 @@ public class Carretera {
 		}
 	}
 	private void tick(){
+		explotar();
 		for(Cotxe c : cotxes){
-			c.setPos(c.getPos() + c.getVelocitad());
+			c.setPos(c.getPos() + c.getVelocitat());
+			
 		}
-		for(int i = 0; i < cotxes.size(); i++){
-			Cotxe d = cotxes.get(i);
-			System.out.println(d.getPos());
+	}
+	private void explotar (){
+		ArrayList<Integer> xocs = getXocs();
+		for(int xoc : xocs){
+			ArrayList<Cotxe> toRemove = new ArrayList<Cotxe>();
+			for (int i = 0; i < cotxes.size(); i++){
+				if (xoc == cotxes.get(i).getPos()){
+					toRemove.add(cotxes.get(i));
+				}
+			}
+			for(Cotxe r : toRemove){
+				cotxes.remove(r);
+			}
 		}
+	}
+	public void print(){
+		for (int i = 0; i <= maxPos; i++){
+			int nCotxes = 0;
+			for (int j = 0; j < cotxes.size(); j++){
+				if (i == cotxes.get(j).getPos()){
+					nCotxes++;
+				}
+			}
+			
+			if (nCotxes == 0) System.out.print("-");
+			if (nCotxes == 1) System.out.print("C");
+			if (nCotxes > 1) System.out.print("X");
+		}
+		System.out.println("");
 	}
 }

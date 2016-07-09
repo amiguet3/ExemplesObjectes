@@ -2,14 +2,14 @@ package com.amiguet;
 
 public class Cotxe {
 	private int pos;
-	private int velocitad;
+	private int velocitat;
 
-	public int getVelocitad() {
-		return velocitad;
+	public int getVelocitat() {
+		return velocitat;
 	}
 
-	public void setVelocitad(int velocitad) {
-		this.velocitad = velocitad;
+	public void setVelocitat(int velocitad) {
+		this.velocitat = velocitad;
 	}
 
 	public int getPos() {
