@@ -8,14 +8,19 @@ public class Main {
 		// TODO Auto-generated method stub
 		
 		System.out.println("calla");
-		int[] arr = {3, 4, 5, 6, 6, 5};
 		ArrayList<Cotxe> cotxes = new ArrayList<Cotxe>();
-		for(int i = 0; i   < arr.length; i++){
-			Cotxe c = new Cotxe();
-			c.setPos(arr[i]);
-			c.setVelocitat(1);
-			cotxes.add(c);
-		}
+		Cotxe c = new Cotxe();
+		Cotxe d = new Cotxe();
+		Cotxe b = new Cotxe();
+		c.setPos(4);
+		c.setVelocitat(3);
+		d.setPos(10);
+		d.setVelocitat(2);
+		b.setPos(2);
+		b.setVelocitat(5);
+		cotxes.add(c);
+		cotxes.add(d);
+		cotxes.add(b);
 		
 		Carretera carr =  new Carretera();
 		
