@@ -3,6 +3,7 @@ package com.amiguet;
 import java.util.ArrayList;
 
 public class Carretera {
+	int nCotxesExplotats = 0;
 	private ArrayList<Cotxe> cotxes = new ArrayList<Cotxe>();
 	int maxPos = 100;
 	public void setCotxes(ArrayList<Cotxe> cotxes) {
@@ -60,6 +61,7 @@ public class Carretera {
 			}
 			for(Cotxe r : toRemove){
 				cotxes.remove(r);
+				nCotxesExplotats++;
 			}
 		}
 	}
@@ -76,6 +78,6 @@ public class Carretera {
 			if (nCotxes == 1) System.out.print("C");
 			if (nCotxes > 1) System.out.print("X");
 		}
-		System.out.println("");
+		System.out.println("[" + cotxes.size() + " (" + nCotxesExplotats + ")" + "]");
 	}
 }
